@@ -2,8 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { colorsDark } from './palette';
 
 
-const setGlobalStyles = () =>
-  createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     * {
       box-sizing: border-box;
     }
@@ -26,6 +25,6 @@ const setGlobalStyles = () =>
         color: inherit;
       }
     }
-  `;
+  `
 
-export default setGlobalStyles;
+export default GlobalStyles;
