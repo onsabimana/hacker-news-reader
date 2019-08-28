@@ -21,7 +21,7 @@ const actions = {
       return hackerNewsApi.getTopStoryIds()
         .then(storyIds => {
           dispatch(action(actionTypes.FETCH_STORY_IDS_SUCCESS, { storyIds }));
-          dispatch(action(actions.fetchStories({ storyIds, page: 0})));
+          dispatch(actions.fetchStories({ storyIds, page: 0}));
           return storyIds;
         })
         .catch( err => dispatch(action(actionTypes.FETCH_STORY_IDS_FAILURE, err)))
@@ -29,12 +29,14 @@ const actions = {
   },
   fetchStories: (payload = {}) => {
     return dispatch => {
-      dispatch(actionTypes.FETCH_STORY_IDS_REQUEST, payload);
+      dispatch(action(actionTypes.FETCH_STORIES_REQUEST, payload));
       const { storyIds, page } = payload;
 
       return hackerNewsApi.getStoriesByPage(storyIds, page)
-        .then(stories => dispatch(action(actionTypes.FETCH_STORIES_SUCCESS, { stories })))
-        .catch(err => dispatch(actionTypes.FETCH_STORIES_FAILURE, err));
+        .then(stories => {
+          dispatch(action(actionTypes.FETCH_STORIES_SUCCESS, { stories }));
+        })
+        .catch(err => dispatch(action(actionTypes.FETCH_STORIES_FAILURE, err)))
     };
   }
 };
