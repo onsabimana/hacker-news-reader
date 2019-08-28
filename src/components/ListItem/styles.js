@@ -19,7 +19,7 @@ export const Title = styled.h3`
 export const Host = styled.span`
   color: ${({ theme }) => theme.textSecondary};
   font-size: 12px;
-  `;
+`;
 
 export const ExternalLink = styled.a`
   color: ${({ theme }) => theme.textSecondary};
@@ -32,7 +32,7 @@ export const ExternalLink = styled.a`
 `;
 
 export const Description = styled.div`
-  fomt-size: 14px;
+  font-size: 14px;
   color: ${({ theme }) => theme.textSecondary};
 `;
 

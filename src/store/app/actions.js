@@ -1,4 +1,4 @@
-const NS = '@hnCline/app';
+const NS = '@hnClone/app';
 
 export const actionTypes = {
   SET_THEME: `${NS}/SET_THEME`,
