@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://onsabimana.github.io/hacker-news-reader",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "eslint": "^6.2.2",
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
